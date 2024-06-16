@@ -28,7 +28,7 @@ export const LoginForm = () => {
     )
       .unwrap()
       .then(() => {
-        console.log("Login success");
+        toast("Login success");
       })
       .catch(() => {
         toast("The email/password is wrong or user is not registered");
