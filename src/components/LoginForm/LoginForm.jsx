@@ -46,19 +46,46 @@ export const LoginForm = () => {
         validationSchema={ContactSchema}
       >
         <Form>
-          <label htmlFor={`${id}-email`} className={css.label}>
-            Email
-            <Field type="email" id={`${id}-email`} name="email" />
-            <ErrorMessage name="email" />
-          </label>
-          <label htmlFor={`${id}-password`} className={css.label}>
-            Password
-            <Field id={`${id}-password`} type="password" name="password" />
-            <ErrorMessage name="password" />
-          </label>
-          <Button variant="contained" type="submit">
-            Log In
-          </Button>
+          <Box
+            display="flex"
+            flexDirection="column"
+            borderRadius={3}
+            border="1px solid #fff"
+            p={5}
+            gap={3}
+          >
+            <label htmlFor={`${id}-email`} className={css.label}>
+              <h3>Email</h3>
+              <Field
+                type="email"
+                id={`${id}-email`}
+                name="email"
+                className={css.field}
+              />
+              <ErrorMessage
+                className={css.error}
+                name="email"
+                component="span"
+              />
+            </label>
+            <label htmlFor={`${id}-password`} className={css.label}>
+              <h3>Password</h3>
+              <Field
+                id={`${id}-password`}
+                className={css.field}
+                type="password"
+                name="password"
+              />
+              <ErrorMessage
+                className={css.error}
+                name="password"
+                component="span"
+              />
+            </label>
+            <Button color="secondary" variant="contained" type="submit">
+              Log In
+            </Button>
+          </Box>
         </Form>
       </Formik>
       <Toaster />

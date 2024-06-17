@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import App from "./components/App.jsx";
 import "./index.css";
 import { Provider } from "react-redux";
 import { store, persistor } from "./redux/store.js";
@@ -8,13 +8,31 @@ import { PersistGate } from "redux-persist/integration/react";
 import { BrowserRouter } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
+import { createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#44ff87",
+      contrastText: "#fff",
+    },
+    secondary: {
+      main: "#ff44be",
+      contrastText: "#fff",
+    },
+  },
+});
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <HelmetProvider>
-            <App />
+            <ThemeProvider theme={theme}>
+              <App />
+            </ThemeProvider>
           </HelmetProvider>
         </BrowserRouter>
       </PersistGate>

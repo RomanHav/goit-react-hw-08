@@ -5,6 +5,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 import { useId } from "react";
+import { Box, Button } from "@mui/material";
 
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -38,22 +39,54 @@ export const RegisterForm = () => {
       validationSchema={ContactSchema}
     >
       <Form>
-        <label htmlFor={`${id}-name`} className={css.label}>
-          Username
-          <Field id={`${id}-name`} type="text" name="name" />
-          <ErrorMessage name="name" />
-        </label>
-        <label htmlFor={`${id}-email`} className={css.label}>
-          Email
-          <Field id={`${id}-email`} type="email" name="email" />
-          <ErrorMessage name="email" />
-        </label>
-        <label htmlFor={`${id}-password`} className={css.label}>
-          Password
-          <Field id={`${id}-password`} type="password" name="password" />
-          <ErrorMessage name="password" />
-        </label>
-        <button type="submit">Register</button>
+        <Box
+          display="flex"
+          flexDirection="column"
+          p={5}
+          gap={3}
+          border="1px solid #fff"
+          borderRadius={3}
+        >
+          <label htmlFor={`${id}-name`} className={css.label}>
+            Username
+            <Field
+              id={`${id}-name`}
+              type="text"
+              name="name"
+              className={css.field}
+            />
+            <span className={css.error}>
+              <ErrorMessage name="name" />
+            </span>
+          </label>
+          <label htmlFor={`${id}-email`} className={css.label}>
+            Email
+            <Field
+              id={`${id}-email`}
+              type="email"
+              name="email"
+              className={css.field}
+            />
+            <span className={css.error}>
+              <ErrorMessage name="email" />
+            </span>
+          </label>
+          <label htmlFor={`${id}-password`} className={css.label}>
+            Password
+            <Field
+              id={`${id}-password`}
+              type="password"
+              name="password"
+              className={css.field}
+            />
+            <span className={css.error}>
+              <ErrorMessage name="password" />
+            </span>
+          </label>
+          <Button color="secondary" variant="contained" type="submit">
+            Register
+          </Button>
+        </Box>
       </Form>
     </Formik>
   );

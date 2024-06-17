@@ -1,32 +1,19 @@
-import DocumentTitle from "../../DocumentTitle";
-
-const styles = {
-  container: {
-    minHeight: "calc(100vh - 50px)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  title: {
-    fontWeight: 500,
-    fontSize: 48,
-    textAlign: "center",
-  },
-};
+import DocumentTitle from "../../components/DocumentTitle.jsx";
+import { Box } from "@mui/material";
 
 export default function HomePage() {
   return (
     <>
       <DocumentTitle>Home</DocumentTitle>
 
-      <div style={styles.container}>
-        <h1 style={styles.title}>
-          The best contact list editor
+      <Box>
+        <h1 style={{ textAlign: "center" }}>
+          The best contact list editor{" "}
           <span role="img" aria-label="Greeting icon">
-            😍😍😜🧕🏿
+            ☎️
           </span>
         </h1>
-      </div>
+      </Box>
     </>
   );
 }

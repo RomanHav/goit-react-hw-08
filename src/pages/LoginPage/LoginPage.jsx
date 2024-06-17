@@ -1,11 +1,12 @@
-import DocumentTitle from "../../DocumentTitle";
+import DocumentTitle from "../../components/DocumentTitle.jsx";
 import { LoginForm } from "../../components/LoginForm/LoginForm";
+import { Box } from "@mui/material";
 
 export default function LoginPage() {
   return (
-    <div>
+    <Box>
       <DocumentTitle>Login</DocumentTitle>
       <LoginForm />
-    </div>
+    </Box>
   );
 }

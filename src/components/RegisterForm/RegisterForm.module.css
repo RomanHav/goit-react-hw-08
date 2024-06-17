@@ -1,0 +1,15 @@
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.error{
+    color: #b4494d;
+}
+.field{
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #fbfbfb;
+    border: 0;
+    min-width: 15rem;
+}
